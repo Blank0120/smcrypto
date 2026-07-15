@@ -1,8 +1,6 @@
 from math import ceil
 from typing import TypeAlias
 
-from .hash import sm3
-
 rotl = lambda x, n: ((x << n) & 0xFFFFFFFF) | ((x >> (32 - n)) & 0xFFFFFFFF)  # noqa: E731
 
 asn1str: TypeAlias = str
@@ -12,6 +10,7 @@ asn1str: TypeAlias = str
 # https://www.secg.org/sec1-v1.99.dif.pdf
 # ANSI-X9.63-KDF
 def ansi_x963_with_nosalt_kdf(z: bytes, klen):
+    from .hash import sm3
     # TODO not support klen % 8 != 0
     if klen % 8 != 0:
         raise ValueError("klen must be multiple of 8, others not support now")
