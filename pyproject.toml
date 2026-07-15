@@ -1,6 +1,6 @@
 [project]
 name = "cryptanalysis_tools"
-version = "0.1.4"
+version = "0.1.5"
 description = "sm crypto or more, cryptanalysis tools, toys"
 readme = "README.md"
 requires-python = ">=3.12"
